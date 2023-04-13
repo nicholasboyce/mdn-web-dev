@@ -1,0 +1,181 @@
+/* General setup */
+@font-face {
+  font-family: "aleolight";
+  src: url(web-fonts/Aleo-Light-webfont.woff) format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "aaarghnormal";
+  src: url(web-fonts/Aaargh-webfont.woff) format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0 auto;
+  min-width: 1000px;
+  max-width: 1400px;
+}
+
+/* Layout */
+
+section {
+  float: left;
+  width: 50%;
+}
+
+aside {
+  float: left;
+  width: 30%;
+}
+
+nav {
+  float: left;
+  width: 20%;
+}
+
+footer {
+  clear: both;
+}
+
+header, section, aside, nav, footer {
+  padding: 20px;
+}
+
+/* header and footer */
+
+header, footer {
+  border-top: 5px solid hsl(0, 29%, 53%);
+  border-bottom: 5px solid hsl(0, 29%, 53%);
+}
+
+/* WRITE YOUR CODE BELOW HERE */
+
+/* General styles */
+html {
+  font-size: 10px;
+}
+
+body {
+  font-family: "aaarghnormal", serif;
+  line-height: 1.5;
+}
+
+h1, h2 {
+  font-family: "aleolight", serif;
+  letter-spacing: 2px;
+}
+
+h1 {
+  font-size: 3rem;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+p, 
+ul,
+ol {
+  font-size: 1.5rem;
+  letter-spacing: 1px;
+}
+
+header {
+  text-align: center;
+}
+
+section h2 + p {
+  text-indent: 20px;
+}
+
+/* Links */
+a {
+  outline: none;
+}
+
+a[href^="http"] {
+  background: url(external-link-52.png) no-repeat 100% 0;
+  background-size: 16px 16px;
+  padding-right: 19px;
+}
+
+a:link {
+  color:hsl(30, 29%, 40%);
+}
+
+a:visited {
+  color:hsl(500, 29%, 53%);
+}
+
+a:focus {
+  text-decoration: none;
+  color: hsl(198, 29%, 53%);
+}
+
+a:hover {
+  text-decoration: none;
+  color: hsl(198, 29%, 53%);
+}
+
+a:active {
+  background-color: hsl(0, 29%, 53%);
+  color:hsl(0, 0%, 100%);
+}
+
+/* Lists */
+
+ul {
+  list-style-type: square;
+}
+
+/* Navigation menu */
+nav {
+  height: 100%;
+}
+
+nav ul{
+  display: flex;
+  flex-direction: column;
+  list-style-type: none;
+  gap: 0.625%;
+  justify-content: center;
+  padding-left: 0;
+  height: 100%;
+}
+
+nav ul li {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+nav ul a{
+  flex: 1;
+  background-color: hsl(0, 29%, 53%);
+  color: hsl(0, 0%, 100%);
+  display: inline-block;
+  width: 100%;
+  text-decoration: none;
+  padding: 3rem 0;
+}
+
+nav ul a:link,
+nav ul a:hover,
+nav ul a:focus {
+  color:hsl(0, 0%, 100%);
+  background-color: hsl(0, 29%, 70%);
+}
+
+nav ul a:visited {
+  color:hsl(0, 0%, 100%);
+}
+
+nav ul a:active {
+  background: hsl(0, 29%, 40%);
+}
