@@ -28,6 +28,7 @@ const insertZ = [
 
 randomize.addEventListener('click', result);
 
+/*Definest result function. */
 function result() {
 
     let newStory = storyText;
