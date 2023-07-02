@@ -1,7 +1,7 @@
 // Defining a baseURL and key to as part of the request URL
 
 const baseURL = 'https://api.nytimes.com/svc/search/v2/articlesearch.json';
-const key = 'e8j7y0jbG8Hg9U1yQK7kHXMPxvG1DWnO';
+const key = 'key';
 
 // Grab references to all the DOM elements you'll need to manipulate
 const searchTerm = document.querySelector('.search');
@@ -36,11 +36,11 @@ function fetchResults(e) {
 
     if (startDate.value !== "") {
         url = `${url}&begin_date=${startDate.value}`;
-    }
+    };
 
     if (endDate.value !== "") {
         url = `${url}&end_date=${endDate.value}`;
-    }
+    };
 
     fetch(url)
         .then((response) => response.json())
@@ -50,7 +50,7 @@ function fetchResults(e) {
 
 function displayResults(json) {
     while(section.firstChild) {
-        section.remove(section.firstChild);
+        section.removeChild(section.firstChild);
     }
 
     const articles = json.response.docs;
