@@ -11,6 +11,10 @@ ctx.fillRect(0, 0, width, height);
 const image = new Image();
 image.src = "firefox.png";
 
+image.addEventListener("load", () => ctx.drawImage(image, 20, 20, 185, 175, 50, 50, 185, 175));
+canvas.setAttribute("aria-label", "Firefox Logo");
+
+
 
 
 
