@@ -9,7 +9,8 @@ const fwd = document.querySelector(".fwd");
 const timerWrapper = document.querySelector(".timer");
 const timer = document.querySelector(".timer span");
 const timerBar = document.querySelector(".timer div");
-const timerZone = timerWrapper.getBoundingClientRect();
+
+// const rect = timerWrapper.getBoundingClientRect().left; //Not sure why this is different than e.target.getBounding...
 
 media.removeAttribute("controls");
 controls.style.visibility = "visible";
@@ -35,7 +36,7 @@ stop.addEventListener("click", stopMedia);
 media.addEventListener("ended", stopMedia);
 media.addEventListener("timeupdate", setTime);
 timerWrapper.addEventListener("click", jumpTo);
-document.addEventListener("click", (e) => console.log(`${e.x}, ${timerBar.offsetLeft}`));
+// document.addEventListener("click", (e) => console.log(`${e.x}, ${rect}`));
 
 
 function stopMedia() {
@@ -120,17 +121,10 @@ function setTime() {
 
 function jumpTo(e) {
 
-    //For some reason, timerZone does not give the same coordinates relative to the viewport as clicking does. Not sure why.
-    const distance = e.x - 267; //Through trial and error, it looks like the real coordinate is 267px from the left.
+    const leftBound = e.currentTarget.getBoundingClientRect().left;
+    const distance = e.x - leftBound; 
     const timerWidth = timerWrapper.clientWidth;
     const timeStamp = distance / timerWidth;
-
-    console.log(e.x);
-    console.log(timerZone.left + window.scrollX);
-    //console.log(timerZone.right);
-    console.log(distance);
-    console.log(timerWrapper.clientWidth);
-    //console.log(timeStamp);
 
     media.currentTime = (media.duration * timeStamp);
 }
