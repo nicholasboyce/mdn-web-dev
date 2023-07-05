@@ -10,12 +10,13 @@ const timerWrapper = document.querySelector(".timer");
 const timer = document.querySelector(".timer span");
 const timerBar = document.querySelector(".timer div");
 
-// const rect = timerWrapper.getBoundingClientRect().left; //Not sure why this is different than e.target.getBounding...
+//Generate the DOMRect in the event handler, NOT beforehand. Otherwise you get a weird result.
 
 media.removeAttribute("controls");
 controls.style.visibility = "visible";
 
 play.addEventListener("click", playPauseMedia);
+
 
 function playPauseMedia() {
     rwd.classList.remove("active");
@@ -36,7 +37,6 @@ stop.addEventListener("click", stopMedia);
 media.addEventListener("ended", stopMedia);
 media.addEventListener("timeupdate", setTime);
 timerWrapper.addEventListener("click", jumpTo);
-// document.addEventListener("click", (e) => console.log(`${e.x}, ${rect}`));
 
 
 function stopMedia() {
